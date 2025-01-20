@@ -1,5 +1,6 @@
 
 
+
 /* Contenedor del video */
 .video-emergente {
     position: fixed;
@@ -52,11 +53,12 @@ body {
     transform: translate(-50%, -50%);
     background-color: white;
     border: 2px solid #007acc;
-    padding: 20px;
+    padding: 30px 40px; /* Aumenta el espacio interno */
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: aparecer 1s ease-in-out;
-   
+    width: 300px; /* Ancho del cuadro */
+    text-align: center;
 }
 
 @keyframes aparecer {
@@ -69,6 +71,13 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+.mensaje-emergente h6 {
+    font-size: 1.0em; /* Aumenta el tamaño del texto */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    color: #003366; /* Color del texto */
+}
+
 
 .contenido {
     display: none;
