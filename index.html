@@ -13,6 +13,8 @@
     <script>
         function abrirInvitacion() {
             document.getElementById("mensaje-emergente").style.display = "none";
+             document.getElementById("portada").style.display = "none"; // Oculta la imagen de fondo también
+            
             const video = document.getElementById("video-container");
             video.style.display = "flex"; // Muestra el contenedor del video
             const miVideo = document.querySelector("#video-container video");
