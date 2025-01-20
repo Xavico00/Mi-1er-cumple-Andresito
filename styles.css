@@ -1,6 +1,5 @@
 
 
-
 /* Contenedor del video */
 .video-emergente {
     position: fixed;
@@ -46,6 +45,22 @@ body {
     overflow: hidden; /* Evita el desplazamiento mientras el video está activo */
 }
 
+
+
+.portada {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ocupa toda la pantalla */
+    background-image: url('Bichikids\ Wallpapers.jpeg'); /* Coloca tu imagen aquí */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    z-index: 999; /* Asegura que esté debajo del mensaje */
+}
+
+
+
 .mensaje-emergente {
     position: fixed;
     top: 50%;
@@ -57,7 +72,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     animation: aparecer 1s ease-in-out;
-    width: 290px; /* Ancho del cuadro */
+    width: 390px; /* Ancho del cuadro */
     text-align: center;
 }
 
