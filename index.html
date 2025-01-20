@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Mi 1er año</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    
+
+    <script>
+        function abrirInvitacion() {
+            document.getElementById("mensaje-emergente").style.display = "none";
+            document.getElementById("portada").style.display = "none"; // Oculta la imagen de fondo también
+            
+            const video = document.getElementById("video-container");
+            video.style.display = "flex"; // Muestra el contenedor del video
+            const miVideo = document.querySelector("#video-container video");
+    
+            miVideo.muted = false; // Habilita el sonido
+            miVideo.play(); // Reproduce el video
+    
+            // Configura el temporizador para ocultar el video y mostrar el contenido después de 32 segundos
+            setTimeout(() => {
+                video.style.display = "none"; // Oculta el video
+                document.body.style.overflow = "auto"; // Permite desplazarse nuevamente
+                document.getElementById("contenido").style.display = "block"; // Muestra el contenido
+            }, 38000); // 38 segundos
+        }
+    </script>
+    
+</head>
+
+<body>
+    <!-- Contenedor con la imagen de fondo -->
+    <div id="portada" class="portada">
+        <!-- Mensaje emergente -->
+        <div id="mensaje-emergente" class="mensaje-emergente">
+            <h6>¡Bienvenidos a mi Primer Añito!</h6>
+            <button onclick="abrirInvitacion()">Abrir Invitación</button>
+        </div>
+    </div>
+
+    <!-- Contenedor del video emergente -->
+    <div id="video-container" class="video-emergente" style="display: none;">
+        <video autoplay muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Tu navegador no soporta el video.
+        </video>
+    </div>
+    
+
+    <!-- Contenido principal -->
+    <div id="contenido" class="contenido" style="display: none;">
+        <h1 class="elegante">Mi 1er Año</h1>
+        <h1 class="elegante">Bismark André Palacios Carrión</h1>
+        <img src="portada 1.jpeg" alt="Cumpleañero" class="foto-cumpleanero">
+        
+
+        <audio id="audio" loop> 
+            <source src="Hagamos Una Fiesta 🥳🐞BICHIKIDS.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+
+        <div class="descripcion">
+            <h3>Descripción de la fiesta</h3>
+            <p>✨¡Te invito a festejar mi primer cumpleaños! Un día especial lleno de música y diversión.</p>
+            <p>Con mucha alegría, te invito a celebrar conmigo este momento tan especial en mi vida. Será un evento mágico lleno de momentos inolvidables. 🌈</p>
+            <p>Tu presencia hará que esta celebración sea aún más especial. ¡Prepárate para disfrutar y compartir en grande! 🎉</p>
+        </div>
+
+        <h3>Ubicación de la fiesta</h3>
+
+<!-- Mapa incrustado en un recuadro pequeño -->
+<div class="mapa-contenedor">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3791.137060416135!2d-79.9625342!3d-3.2615368!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d72f3ef0c66a9f%3A0x60bbbfcc54456e4b!2sTu+direccion+aqui!5e0!3m2!1ses!2sec!4v1697094570325!5m2!1ses!2sec" 
+    width="300" height="200" style="border:1px solid #ddd;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+
+<p>
+    <a href="https://www.google.com.ec/maps/@-3.2615368,-79.9625342,3a,90y,312.24h,86.65t/data=!3m7!1e1!3m5!1s9rKL8IIYZUonHy9ZR4YyJQ!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D3.3488669401523197%26panoid%3D9rKL8IIYZUonHy9ZR4YyJQ%26yaw%3D312.2386375441813!7i13312!8i6656?hl=es&entry=ttu&g_ep=EgoyMDI1MDExNS4wIKXMDSoASAFQAw%3D%3D" target="_blank">
+        Ver en Google Maps
+    </a>
+</p>
+
+        <div class="cuenta-regresiva">
+            <h3>Cuenta regresiva al evento</h3>
+            <div class="conteo"> <p id="contador"></p> </div>
+        </div>
+
+        <div class="descripcion">
+            <h3>Detalles del evento</h3>
+            <p>✨ Te esperamos el sábado 25 de enero a las 16H00, en las calles Guayas e/ Arizaga y Manuel Serrano, para dar inicio a esta celebración tan especial.</p>
+            <p>La puntualidad será de mucha importancia. ¡No te olvides tu obsequio! 🎁😉</p>
+            <p>Será una evento inolvidable, ¡esperamos contar con tu presencia! ✨</p>
+        </div>
+    </div>
+
+    <script>
+        // Configuración de la cuenta regresiva
+        const fechaEvento = new Date("2025-01-25T16:00:00").getTime();
+        const x = setInterval(function () {
+            const ahora = new Date().getTime();
+            const distancia = fechaEvento - ahora;
+
+            const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML =
+                dias + "d " + horas + "h " + minutos + "m " + segundos + "s ";
+
+                if (distancia < 0) {
+    clearInterval(x);
+    document.getElementById("contador").innerHTML = `
+        <span style="font-size: 24px; font-weight: bold;">¡El evento ha comenzado!</span>
+        <br>
+        <span style="font-size: 14px; color: gray;">¡Apresúrate!</span>
+    `;
+}
+        }, 1000);
+    </script>
+
+
+<script defer>
+    document.addEventListener('DOMContentLoaded', function() {
+        const audio = document.getElementById('audio');
+
+        setTimeout(function() {
+            audio.play(); // Inicia la música después de 39 segundos
+        }, 39000);
+
+        window.addEventListener('beforeunload', function() {
+            setTimeout(function() {
+                audio.pause(); // Detiene la música después de 1.5 segundos
+            }, 60000); // 1500 ms = 1.5 segundos
+        });
+    });
+</script>
+</body>
+
+</html>
